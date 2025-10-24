@@ -28,6 +28,9 @@ div.header-content {
 }
 
 div.header-container {
+  margin: auto;
+  flex: border-box;
+  flex-wrap: wrap;
   padding: 42px 0px 20px 0px;
   background-color: #0f0f0f;
   align-items: center;
@@ -48,6 +51,7 @@ div.logo > img {
 }
 
 .content-container {
+  margin-inline: 10px;
   align-items: center;
   column-gap: 32px;
   display: flex;
@@ -75,7 +79,6 @@ div.logo > img {
 }
 a {
   text-decoration: none;
-  padding: 8px 0px;
   align-items: start;
   display: flex;
   column-gap: 32px;
@@ -83,14 +86,38 @@ a {
   justify-content: flex-start;
   position: relative;
   row-gap: 32px;
-  width: 40%;
+  width: auto;
+}
+
+.buttons-_- {
+  text-decoration: none;
+  gap: 32px;
+  padding: 8px;
 }
 
 .text {
   color: #737373;
 }
 
-div > svg > path {
+div > svg {
   color: #737373;
-  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#shoping-cart-icon {
+  color: #b2b2b2;
+}
+
+div#shoping-cart-icon > svg > path#icon-path {
+  color: #b2b2b2;
+  height: 24px;
+  position: relative;
+}
+
+div#shoping-cart-icon > svg {
+  color: #737373;
+  height: 24px;
+  width: 24px;
+  position: relative;
 }

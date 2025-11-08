@@ -4,6 +4,7 @@
 :root {
   --MostUsedColorForText: rgba(255, 255, 255, 0.92);
   --NavBackgroundColor: rgba(235, 235, 245, 0.03);
+  --NavIcons: rgba(0, 122, 255, 1);
 }
 
 /* ============================================
@@ -99,6 +100,46 @@ nav.nav-bar {
   font-size: 17px;
   line-height: 1;
   font-weight: 400;
+}
+
+/* ============================================
+   Search Input Styles
+   ============================================ */
+#search-input-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#search-input-form input[type="search"] {
+  width: 100%;
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--MostUsedColorForText);
+  font-size: 14px;
+  outline: none;
+}
+
+#search-input-form input[type="search"]:focus {
+  border-color: var(--NavIcons);
+}
+
+#search-input-form .search-svg {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+#search-input-form .search-svg path {
+  fill: var(--NavIcons);
+}
+
+#search-input-form input[type="search"]::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* ============================================

@@ -3,13 +3,17 @@
    ============================================ */
 :root {
   --MostUsedColorForText: rgba(255, 255, 255, 0.92);
-  --NavBackgroundColor: rgba(235, 235, 245, 0.03);
+  --NavBackgroundColor: #121212;
+  --MainBackgroundColor: #000000;
+  --MainHeaderBlurreBackgroundColor: #191;
   --NavIcons: rgba(0, 122, 255, 1);
+  --labelDivider: hsla(0, 0%, 100%, 0.1);
 }
 
 /* ============================================
    Reset & Base Styles
    ============================================ */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,15 +25,41 @@ body {
     "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
   color: var(--MostUsedColorForText);
-  background-color: #000000;
+  background-color: var(--MainBackgroundColor);
   min-height: 100vh;
 }
 
 /* ============================================
    Navigation Styles
    ============================================ */
+div > button {
+  width: auto;
+}
+
+div.nav-header > div#div-for-logo {
+  width: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-header {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: var(--MostUsedColorForText);
+  background: var(--NavBackgroundColor);
+}
+
+#choose-device {
+  fill: var(--MostUsedColorForText);
+}
+
 nav.nav-bar {
-  background-color: rgba(235, 235, 245, 0.03) !important;
+  border-inline-end: 0.8px solid var(--labelDivider);
+  background-color: var(--NavBackgroundColor);
+}
+
+nav.nav-bar {
   width: 100%;
   min-height: 60px;
   padding: 1rem;
@@ -39,27 +69,32 @@ nav.nav-bar {
 #app-store-logo {
   fill: var(--MostUsedColorForText);
   display: block;
-  height: 24px;
+  height: 18px;
   width: auto;
   box-sizing: border-box;
 }
 
 #div-for-logo {
   display: flex;
+  flex-direction: row;
+  padding: 19px 25px 14px;
+  display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
-  height: 24px;
+  height: 28px;
 }
 
 #div-for-logo a {
   display: inline-block;
   text-decoration: none;
   box-sizing: border-box;
-  height: 24px;
-  line-height: 24px;
+  height: 18px;
+  line-height: 18px;
 }
 
 #div-for-logo button {
+  flex: 1 1 auto !important;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -67,10 +102,19 @@ nav.nav-bar {
   margin: 0;
   font-size: inherit;
   font-family: inherit;
-  height: 24px;
+  height: 28px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
+}
+.search-input-wrapper {
+  flex-grow: 1;
+  height: auto;
+}
+
+#div-for-search {
+  flex: 1 1 auto !important;
+  margin-inline: 25px;
 }
 
 /* ============================================
@@ -79,10 +123,10 @@ nav.nav-bar {
 #mobile-friendly-responsive-text {
   position: relative;
   display: inline-block;
-  color: transparent; /* Hide original text */
-  font-size: 17px;
+  color: transparent;
+  font-size: 24px;
   line-height: 1;
-  height: 24px;
+  height: 28px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -90,14 +134,16 @@ nav.nav-bar {
 }
 
 #mobile-friendly-responsive-text::before {
-  content: "For Mac";
+  content: "dla Mac";
   color: var(--MostUsedColorForText);
   position: absolute;
   left: 0;
   top: 50%;
+  text-align: center;
+  justify-content: center;
   transform: translateY(-50%);
   white-space: nowrap;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1;
   font-weight: 400;
 }
@@ -105,6 +151,20 @@ nav.nav-bar {
 /* ============================================
    Search Input Styles
    ============================================ */
+div > form {
+  display: flex;
+  flex-direction: row;
+}
+
+div > form > input {
+  flex: 1 0 auto;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  padding: 6px 5px 5px 28px !important;
+}
+
 #search-input-form {
   position: relative;
   display: flex;
@@ -115,7 +175,7 @@ nav.nav-bar {
   width: 100%;
   padding: 0.5rem 0.5rem 0.5rem 2rem;
   background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--labelDivider);
   border-radius: 8px;
   color: var(--MostUsedColorForText);
   font-size: 14px;
@@ -153,12 +213,16 @@ nav.nav-bar {
 
 @media (max-width: 898px) {
   #mobile-friendly-responsive-text::before {
-    content: "For iPad";
+    content: "dla iPad";
+    align-items: center;
+    justify-content: center;
   }
 }
 
 @media (max-width: 434px) {
   #mobile-friendly-responsive-text::before {
-    content: "For iPhone";
+    justify-content: center;
+    align-items: center;
+    content: "dla iPhone";
   }
 }
